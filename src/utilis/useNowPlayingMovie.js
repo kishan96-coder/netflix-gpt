@@ -1,19 +1,19 @@
-import { MOVIE_API } from '../utilis/Constant'
+import { API_OPTIONS, MOVIE_API } from '../utilis/Constant'
 import { useDispatch } from 'react-redux'
 import { addNowPlayingMovies } from '../utilis/movieSlice'
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 
 const useNowPlayingMovie = () => {
 
     const dispatch = useDispatch();
-
+    
     useEffect(()=>{
       fetchData();
     },[]);
     const  fetchData = async ()=>{
-      const data = await fetch(MOVIE_API);
+      const data = await fetch(MOVIE_API,API_OPTIONS);
       const datajson = await data.json();
-      dispatch(addNowPlayingMovies(datajson));
+      dispatch(addNowPlayingMovies(datajson.results));
     }
 }
 

@@ -1,6 +1,7 @@
 
 const VideoTitle = ({movieData}) => {
-const {title,plot,trailer}= movieData
+
+const {title,overview}= movieData
   return(
   <div>
     <div className='absolute text-white bg-gradient-to-r from-black w-screen aspect-video'>
@@ -9,7 +10,7 @@ const {title,plot,trailer}= movieData
         <p className='text-4xl font-bold'>
             {title}
         </p>
-        <p  className='pt-5'>{plot}</p>
+        <p  className='pt-5'>{overview}</p>
     </div>
     <div className='pt-5 mx-10'>
         <button className='bg-white px-4 py-3 w-32 rounded-lg text-black font-bold hover:bg-opacity-80'>Play</button>

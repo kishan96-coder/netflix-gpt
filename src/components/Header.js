@@ -8,7 +8,15 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addUser,removeUser } from '../utilis/userSlice';
 import { LOGO } from '../utilis/Constant';
+import { addSearch } from '../utilis/showSearcGptSlice';
+import { langChange } from '../utilis/configSlice';
+
 const Header = () => {
+
+const showGptSearch = useSelector(show=>(show.search?.ShowSearch));
+const hanleSearchGpt=()=>{
+  dispatch(addSearch());
+  }
 const navigate = useNavigate();
 const[errorMessage,SeterrorMessage]=useState();
 const dispatch = useDispatch();
@@ -52,15 +60,29 @@ const user = useSelector((store)=>store.user);
       //unsubscribe when component unmounts
       return ()=>unsubscribe();
 },[]);
+
+const handleLanguage=(e)=>{
+  dispatch(langChange(e.target.value));
+}
+
   return (
-    <div className='w-screen px-8 py-2 bg-gradient-to-b from-black flex justify-between z-10 absolute '>
-          <div > 
-          <img className="w-36 m-4 relative" src={LOGO} alt="logo" />
-          
+    <div className='w-screen px-8 py-1 bg-gradient-to-b from-black flex justify-between z-10 absolute '>
+        <div > 
+          <img className="w-36 m-2 relative" src={LOGO} alt="logo" /> 
         </div>  
-        <div className='py-5 flex'>
-        {user && <img className="w-8 m-4 relative" src={user.photoURL} alt="logo" />}
-            <button className='bg-red-600 py-1 rounded-lg w-24 text-white text-lg' onClick={signoutHandle}>Sign out</button>
+        <div className='m-4 flex'>
+      {showGptSearch && <select className='w-1/4 px-2 mx-2 bg-gray-800 text-white' onChange={handleLanguage}>
+          <option value="en">English</option>
+          <option value="es"> Spanish</option>
+          <option value="hi">Hindi</option>
+          <option value="jp">Japanese</option>
+        </select>}
+      
+        <button className='bg-indigo-500 rounded-lg w-24 text-white text-lg' onClick={hanleSearchGpt}>{showGptSearch?"HomePage":"GptSearch"}</button>
+        {user && (<>
+     
+        <img className="w-8 m-4 relative" src={user.photoURL} alt="logo" />
+            <button className='bg-red-600 py-1 rounded-lg w-24 text-white text-lg' onClick={signoutHandle}>Sign out</button></>)}
           </div>
     </div>
   )

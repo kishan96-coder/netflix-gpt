@@ -75,9 +75,8 @@ const Login = () => {
     <div>
 
       <div className='bg-gradient-to-b from-black to-white '>
-      <div >
-  
-            <img src={BACKGROUND} className='absolute'/>
+        <div>
+          <img src={BACKGROUND} className='absolute'/>
         </div>
         <Header/>
         <form onSubmit={(e)=>e.preventDefault()}className='bg-black  w-3/12 text-white z-10 absolute m-40 p-10 bg-opacity-80 right-0 left-0 mx-auto'>

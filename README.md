@@ -31,6 +31,9 @@
 - Build Movie List
 - Build Movie Card
 - TMDB Image CDN
+- GPT search Feature
+- GPT Search Page
+- (Feature)Multi-language Feature in our App
 
 
 # Features

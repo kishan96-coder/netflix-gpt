@@ -17,3 +17,10 @@ export const API_OPTIONS = {
 
 
 export const IMGAE_API="https://image.tmdb.org/t/p/w500/";
+
+export const language = [
+  {identifier:"en",name:"English"},
+  {identifier:"es",name:"Spanish"},
+  {identifier:"hi",name:"Hindi"},
+  {identifier:"jp",name:"Japanese"},
+]

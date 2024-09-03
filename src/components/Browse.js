@@ -4,8 +4,10 @@ import useUpcoming from '../hooks/useUpcoming';
 import useNowPlayingMovie from '../utilis/useNowPlayingMovie'
 import Header from './Header'
 import MainContainer from './MainContainer';
-
+import GptSearchPage from './GptSearchPage';
+import { useSelector} from 'react-redux';
 const Browse = () => {
+  const showSearch = useSelector(store=>store.search?.ShowSearch);
 
 useNowPlayingMovie();
 useUpcoming();
@@ -15,9 +17,9 @@ usePopular();
   return (
     <div>
    <Header/>
-   <MainContainer/>
+   {showSearch?<GptSearchPage/>:<MainContainer/>}
     </div>
   )
 }
 
-export default Browse
+export default Browse;

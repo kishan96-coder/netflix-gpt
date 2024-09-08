@@ -66,11 +66,11 @@ const handleLanguage=(e)=>{
 }
 
   return (
-    <div className='w-screen px-8 py-1 bg-gradient-to-b from-black flex justify-between z-10 absolute '>
-        <div > 
-          <img className="w-36 m-2 relative" src={LOGO} alt="logo" /> 
+    <div className='w-screen px-8 bg-gradient-to-b from-black flex  justify-between z-10 absolute flex-col md:flex-row ' >
+        <div> 
+          <img className="w-36 relative mx-auto md:m-2" src={LOGO} alt="logo" /> 
         </div>  
-        <div className='m-4 flex'>
+        <div className='my-4 flex justify-between'>
       {showGptSearch && <select className='w-1/4 px-2 mx-2 bg-gray-800 text-white' onChange={handleLanguage}>
           <option value="en">English</option>
           <option value="es"> Spanish</option>
@@ -78,11 +78,10 @@ const handleLanguage=(e)=>{
           <option value="jp">Japanese</option>
         </select>}
       
-        <button className='bg-indigo-500 rounded-lg w-24 text-white text-lg' onClick={hanleSearchGpt}>{showGptSearch?"HomePage":"GptSearch"}</button>
+        <button className='bg-indigo-500 px-2 rounded-lg md:w-24 text-white text-lg' onClick={hanleSearchGpt}>{showGptSearch?"HomePage":"GptSearch"}</button>
         {user && (<>
-     
-        <img className="w-8 m-4 relative" src={user.photoURL} alt="logo" />
-            <button className='bg-red-600 py-1 rounded-lg w-24 text-white text-lg' onClick={signoutHandle}>Sign out</button></>)}
+        <img className="hidden w-8 m-2 relative md:block" src={user.photoURL} alt="logo" />
+            <button className='bg-red-600 px-2  py-1 rounded-lg md:w-24 text-white text-lg' onClick={signoutHandle}>Sign out</button></>)}
           </div>
     </div>
   )

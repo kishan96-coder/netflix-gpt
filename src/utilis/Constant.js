@@ -6,12 +6,13 @@ export const MOVIE_API = "https://api.themoviedb.org/3/movie/now_playing?languag
 export const POPULAR_MOVIE_API = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
 export const TOP_RATED_MOVIE_API = "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
 export const UPCOMING_MOVIE_API = "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
-
+export const MOVIE_BY_TITLE_API="https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1"
 export const API_OPTIONS = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzOTIxZTM1OWJjYzFlMTQzMzg3ZjkyYWIxZjgxY2ViMSIsIm5iZiI6MTcyNTEyNjU5MS42NjU2ODEsInN1YiI6IjY2ZDM1NjMzMzljN2YyMzNlMDk0NTI5NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.b8HoAr8fHOv92x1YZe6RadeB3bsMGn919SHjrD0umFc'
+      // Authorization: 'Bearer'+process.env.REACT_APP_TMDB_API,
+       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzOTIxZTM1OWJjYzFlMTQzMzg3ZjkyYWIxZjgxY2ViMSIsIm5iZiI6MTcyNTEyNjU5MS42NjU2ODEsInN1YiI6IjY2ZDM1NjMzMzljN2YyMzNlMDk0NTI5NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.b8HoAr8fHOv92x1YZe6RadeB3bsMGn919SHjrD0umFc'
     }
   };
 

@@ -9,15 +9,15 @@ import { useSelector} from 'react-redux';
 const Browse = () => {
   const showSearch = useSelector(store=>store.search?.ShowSearch);
 
-useNowPlayingMovie();
-useUpcoming();
-useTopRated();
-usePopular();
+  useNowPlayingMovie();
+  useUpcoming();
+  useTopRated();
+  usePopular();
 
   return (
     <div>
-   <Header/>
-   {showSearch?<GptSearchPage/>:<MainContainer/>}
+    <Header/>
+    {showSearch?<GptSearchPage/>:<MainContainer/>}
     </div>
   )
 }

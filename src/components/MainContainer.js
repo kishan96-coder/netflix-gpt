@@ -9,12 +9,12 @@ const MainContainer = () => {
       const MainMovie = movies[0];
        const {id}= MainMovie
   return (
-    <div className='absolute'><VideoTitle movieData={MainMovie}/>
+    <div className="pt-[40%] bg-black md:pt-0">
+      <VideoTitle movieData={MainMovie}/>
       <VideoBackground movieId={id}/>
       <SecondryContainer/>
       </div>
-  
-  )
+      )
 }
 
 export default MainContainer

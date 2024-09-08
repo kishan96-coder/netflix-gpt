@@ -31,9 +31,18 @@
 - Build Movie List
 - Build Movie Card
 - TMDB Image CDN
-- GPT search Feature
-- GPT Search Page
+- Gemini AI search Feature
+- Gemini AI  Search Page
 - (Feature)Multi-language Feature in our App
+- Used GoogLE Gemeni Open Ai Api Key
+- Google Gemini AI search Api Call
+- Fetched Gemini AI Movies Suggestions from TMDB
+- Created the showSearcGptSlice added the data  there
+- Reused the MoviesList component to make movie suggestion container
+- Memoization
+- Adding .env file 
+- Added .env file to gitignore
+- Made our site Responsive 
 
 
 # Features
